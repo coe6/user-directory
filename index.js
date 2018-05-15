@@ -14,11 +14,16 @@ function handleSubmit(ev) {
     ev.preventDefault()
     //const paragraph = document.querySelector('.header3')
     //paragraph.textContent = document.querySelector('#users').value
+    
     const form = ev.target
     const userName = form.changeThirdHeader.value
     const users = document.querySelector('#users')
-    //form.userName.value = ''
-    users.innerHTML += `<p>${userName}, ${form.age.value}</p>`
+
+    const p = document.createElement('p')
+    p.textContent = `${userName}, ${form.age.value}`
+    users.appendChild(p)
+
+    // users.innerHTML += `<p>${userName}, ${form.age.value}</p>`
     form.reset()
     form.changeThirdHeader.focus()
 }
