@@ -1,7 +1,7 @@
 //console.log('It works!')
 
 function changeText(ev) {
-    if(ev.target.textContent === 'Change Header!') {
+    if(ev.target.textContent === 'Change First Header!') {
         const paragraph = document.querySelector('.header1')
         paragraph.textContent = "USER DIRECTORY"
     } else if(ev.target.textContent === 'Change Second Header!') {
@@ -45,6 +45,7 @@ function renderList(form) {
 
 function handleSubmit(ev) {
     ev.preventDefault()
+    console.log("here")
     //const paragraph = document.querySelector('.header3')
     //paragraph.textContent = document.querySelector('#users').value
 
@@ -57,7 +58,7 @@ function handleSubmit(ev) {
     users.appendChild(renderList(form))
 
     // users.innerHTML += `<p>${userName}, ${form.age.value}</p>`
-    //form.reset()
+    form.reset()
     form.changeThirdHeader.focus()
 }
 

@@ -1,6 +1,7 @@
 body {
-    font-family: sans-serif;
+    font-family: Verdana;
     text-align: center;
+    padding: 5px 15px;
 }
 
 .users {
@@ -11,7 +12,24 @@ body {
     text-align:left;
 }
 
-input {
+input, input[type=text] {
     font-family: Verdana;
     font-size: 14px;
+    border: 2px solid rgba(128, 128, 128, 0.507);
+    border-radius: 8px;
+}
+
+button {
+    background-color: white;
+    padding: 5px 15px;
+    font-family: Verdana;
+    font-size: 16px;
+    border: 2px solid rgb(172, 198, 217);
+    border-radius: 6px;
+    transition-duration: 0.4s;
+}
+
+button:hover {
+    background-color:rgb(172, 198, 217);
+
 }
