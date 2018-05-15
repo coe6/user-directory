@@ -20,6 +20,7 @@ function handleSubmit(ev) {
     //form.userName.value = ''
     users.innerHTML += '<p>' + userName + ', ' + form.age.value + '</p>'
     form.reset()
+    form.changeThirdHeader.focus()
 }
 
 const button = document.querySelector('#button1')
