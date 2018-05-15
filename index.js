@@ -17,8 +17,9 @@ function handleSubmit(ev) {
     const form = ev.target
     const userName = form.changeThirdHeader.value
     const users = document.querySelector('#users')
-    document.getElementById("changeThirdHeader").value = ''
-    users.innerHTML += '<p>' + userName + '</p>'
+    //form.userName.value = ''
+    users.innerHTML += '<p>' + userName + ', ' + form.age.value + '</p>'
+    form.reset()
 }
 
 const button = document.querySelector('#button1')
