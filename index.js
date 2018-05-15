@@ -12,9 +12,13 @@ function changeText(ev) {
 
 function handleSubmit(ev) {
     ev.preventDefault()
-    const paragraph = document.querySelector('.header3')
-    paragraph.textContent = document.getElementById("changeThirdHeader").value
-    document.getElementById("changeThirdHeader").value = ' '
+    // const paragraph = document.querySelector('.header3')
+    // paragraph.textContent = document.querySelector('#users').value
+    const form = ev.target
+    const userName = form.changeThirdHeader.value
+    const users = document.querySelector('#users')
+    document.getElementById("changeThirdHeader").value = ''
+    users.textContent += ' ' + userName
 }
 
 const button = document.querySelector('#button1')
