@@ -23,7 +23,7 @@ function handleSubmit(ev) {
 
     const p = document.createElement('p')
     p.style.color = favColor
-    p.textContent = `${userName}, ${form.age.value}, ${favColor}`
+    p.textContent = `${userName}, ${form.age.value}`
     users.appendChild(p)
 
     // users.innerHTML += `<p>${userName}, ${form.age.value}</p>`
