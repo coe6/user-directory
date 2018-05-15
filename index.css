@@ -4,7 +4,14 @@ body {
 }
 
 .users {
+    font-family: Verdana;
+    font-size: 14px;
     width:200px;
     margin:0 auto;
     text-align:left;
+}
+
+input {
+    font-family: Verdana;
+    font-size: 14px;
 }

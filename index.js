@@ -10,6 +10,39 @@ function changeText(ev) {
     }
 }
 
+function renderColor(favColor) {
+    const colorDiv = document.createElement('div')
+    colorDiv.style.backgroundColor = favColor
+    colorDiv.style.width = '7rem'
+    colorDiv.style.height = '2rem'
+
+    return colorDiv
+}
+
+function renderListItem(form) {
+    const nameItem = document.createElement('li')
+    const ageItem = document.createElement('li')
+    const colorItem = document.createElement('li')
+
+    nameItem.textContent = `Name: ${form.changeThirdHeader.value}`
+    ageItem.textContent = `Age: ${form.age.value}`
+    colorItem.textContent = `Favorite Color: `
+
+    const elements = [nameItem, ageItem, colorItem]
+    return elements
+}
+
+function renderList(form) {
+    const list = document.createElement('ul')
+    const elements = renderListItem(form)
+    elements[2].appendChild(renderColor(form.favoriteColor.value))
+    list.appendChild(elements[0])
+    list.appendChild(elements[1])
+    list.appendChild(elements[2])
+    
+    return list
+}
+
 function handleSubmit(ev) {
     ev.preventDefault()
     //const paragraph = document.querySelector('.header3')
@@ -21,29 +54,10 @@ function handleSubmit(ev) {
 
     const favColor = form.favoriteColor.value
 
-    const list = document.createElement('ul')
-    const nameItem = document.createElement('li')
-    nameItem.textContent = `Name: ${userName}`
-    list.appendChild(nameItem)
-
-    const ageItem = document.createElement('li')
-    ageItem.textContent = `Age: ${form.age.value}`
-    list.appendChild(ageItem)
-
-    const colorItem = document.createElement('li')
-    colorItem.textContent = `Favorite Color: `
-
-    const colorDiv = document.createElement('div')
-    colorDiv.style.backgroundColor = favColor
-    colorDiv.style.width = '4rem'
-    colorDiv.style.height = '2rem'
-    colorItem.appendChild(colorDiv)
-    list.appendChild(colorItem)
-
-    users.appendChild(list)
+    users.appendChild(renderList(form))
 
     // users.innerHTML += `<p>${userName}, ${form.age.value}</p>`
-    form.reset()
+    //form.reset()
     form.changeThirdHeader.focus()
 }
 
