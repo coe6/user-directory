@@ -10,15 +10,20 @@
     <h2 class="header3">Third Header</h2>
     <h2 class="header4">Fourth Header</h2>
 
-    <button id="button1">Change Header!</button>
+    <button id="button1">Change First Header!</button>
     <button id="button2">Change Second Header!</button>
 
     <br></br>
     <!--<p>Change the text of the third header by entering your text of choice!</p> -->
-    <form name="textInput">
-        <input id="changeThirdHeader" type="text">
+    <form id="textInput">
+        <p>
+        <label for="enterMessage">Enter text for Third Header:</label>
+        <input name="enterMessage" id="changeThirdHeader" type="text">
+        </p>
+
+        <button type="submit" id="button3">Submit!</button>
     </form>
-    <button id="button3">Change Third Header!</button>
+    
 
     <script src="index.js"></script>
 </body>

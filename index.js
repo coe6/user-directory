@@ -7,17 +7,22 @@ function changeText(ev) {
     } else if(ev.target.textContent === 'Change Second Header!') {
         const paragraph = document.querySelector('.header2')
         paragraph.textContent = "SECOND HEADER"
-    } else if(ev.target.textContent === 'Change Third Header!') {
-        const paragraph = document.querySelector('.header3')
-        paragraph.textContent = document.getElementById("changeThirdHeader").value
-        document.getElementById("changeThirdHeader").value = ' '
     }
+}
+
+function handleSubmit(ev) {
+    ev.preventDefault()
+    const paragraph = document.querySelector('.header3')
+    paragraph.textContent = document.getElementById("changeThirdHeader").value
+    document.getElementById("changeThirdHeader").value = ' '
 }
 
 const button = document.querySelector('#button1')
 const button2 = document.querySelector('#button2')
-const button3 = document.querySelector('#button3')
+//const button3 = document.querySelector('#button3')
+const form1 = document.querySelector('form#textInput')
 
 button.addEventListener('click', changeText)
 button2.addEventListener('click', changeText)
-button3.addEventListener('click', changeText)
+//button3.addEventListener('click', changeText)
+form1.addEventListener('submit', handleSubmit)
