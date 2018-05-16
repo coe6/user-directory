@@ -19,41 +19,34 @@ function renderColor(favColor) {
     return colorDiv
 }
 
-function renderListItem(form) {
-    const nameItem = document.createElement('li')
-    const ageItem = document.createElement('li')
-    const colorItem = document.createElement('li')
+function renderListItem(type, value) {
+    const item = document.createElement('li')
+    item.textContent = `${type}: ${value}`
 
-    nameItem.textContent = `Name: ${form.changeThirdHeader.value}`
-    ageItem.textContent = `Age: ${form.age.value}`
-    colorItem.textContent = `Favorite Color: `
-
-    const elements = [nameItem, ageItem, colorItem]
-    return elements
+    return item
 }
 
 function renderList(form) {
     const list = document.createElement('ul')
-    const elements = renderListItem(form)
-    elements[2].appendChild(renderColor(form.favoriteColor.value))
-    list.appendChild(elements[0])
-    list.appendChild(elements[1])
-    list.appendChild(elements[2])
+    const nameItem = renderListItem("Name", form.changeThirdHeader.value)
+    const ageItem = renderListItem("Age", form.age.value)
+    const colorItem = renderListItem("Favorite Color", '')
+
+    colorItem.appendChild(renderColor(form.favoriteColor.value))
+    list.appendChild(nameItem)
+    list.appendChild(ageItem)
+    list.appendChild(colorItem)
     
     return list
 }
 
 function handleSubmit(ev) {
     ev.preventDefault()
-    console.log("here")
     //const paragraph = document.querySelector('.header3')
     //paragraph.textContent = document.querySelector('#users').value
 
     const form = ev.target
-    const userName = form.changeThirdHeader.value
     const users = document.querySelector('#users')
-
-    const favColor = form.favoriteColor.value
 
     users.appendChild(renderList(form))
 
