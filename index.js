@@ -41,7 +41,7 @@ function renderList(form) {
         'Favorite Color': renderColor(form.favoriteColor.value),
     }
 
-    Object.keys(user).map(function(value) {
+    Object.keys(user).map(value => {
         const item = renderListItem(value, user[value])
         list.appendChild(item)
     })
