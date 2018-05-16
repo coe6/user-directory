@@ -21,7 +21,13 @@ function renderColor(favColor) {
 
 function renderListItem(type, value) {
     const item = document.createElement('li')
-    item.textContent = `${type}: ${value}`
+    item.textContent = `${type}: `
+
+    try {
+        item.appendChild(value)
+    } catch(e) {
+        item.textContent += value
+    }
 
     return item
 }
@@ -30,9 +36,8 @@ function renderList(form) {
     const list = document.createElement('ul')
     const nameItem = renderListItem("Name", form.changeThirdHeader.value)
     const ageItem = renderListItem("Age", form.age.value)
-    const colorItem = renderListItem("Favorite Color", '')
+    const colorItem = renderListItem("Favorite Color", renderColor(form.favoriteColor.value))
 
-    colorItem.appendChild(renderColor(form.favoriteColor.value))
     list.appendChild(nameItem)
     list.appendChild(ageItem)
     list.appendChild(colorItem)
