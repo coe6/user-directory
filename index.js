@@ -34,13 +34,17 @@ function renderListItem(type, value) {
 
 function renderList(form) {
     const list = document.createElement('ul')
-    const nameItem = renderListItem("Name", form.changeThirdHeader.value)
-    const ageItem = renderListItem("Age", form.age.value)
-    const colorItem = renderListItem("Favorite Color", renderColor(form.favoriteColor.value))
 
-    list.appendChild(nameItem)
-    list.appendChild(ageItem)
-    list.appendChild(colorItem)
+    const user = {
+        'Name': form.changeThirdHeader.value,
+        'Age': form.age.value,
+        'Favorite Color': renderColor(form.favoriteColor.value),
+    }
+
+    Object.keys(user).map(function(value) {
+        const item = renderListItem(value, user[value])
+        list.appendChild(item)
+    })
     
     return list
 }
