@@ -1,19 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis');
+
 body {
-    font-family: Verdana;
+    font-family: Dosis, Verdana;
     text-align: center;
 }
 
+main {
+    display: flex;
+    justify-content: space-around;
+}
+
+#textInput {
+    background-color:  rgba(184, 187, 189, 0.3);
+    padding: 1rem;
+    border: 1px solid #e3e3e3;
+}
+
 .header1 {
-    background-color: rgba(172, 198, 217, 0.76);
+    background-color: rgba(184, 187, 189, 0.3);
     padding: 5px 15px
 }
 
 .users {
     font-family: Verdana;
     font-size: 14px;
-    width:200px;
+    /* width:200px;
     margin:0 auto;
-    text-align:left;
+    text-align:left; */
 }
 
 input, input[type=text] {
