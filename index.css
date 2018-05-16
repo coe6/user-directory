@@ -11,14 +11,15 @@ main {
 }
 
 #textInput {
-    background-color:  rgba(184, 187, 189, 0.3);
+    background-color: whitesmoke;
     padding: 1rem;
     border: 1px solid #e3e3e3;
 }
 
 .header1 {
-    background-color: rgba(184, 187, 189, 0.3);
-    padding: 5px 15px
+    background-color: whitesmoke;
+    padding: 1rem;
+    border: 1px solid #e3e3e3;
 }
 
 .users {
@@ -41,12 +42,24 @@ button , input[type=button] {
     padding: 5px 15px;
     font-family: Verdana;
     font-size: 16px;
-    border: 2px solid rgb(172, 198, 217);
+    border: 2px solid rgb(187, 213, 233);
     border-radius: 6px;
     transition-duration: 0.4s;
 }
 
 button:hover, input[type=button]:hover {
-    background-color:rgb(172, 198, 217);
+    background-color:rgb(187, 213, 233);
+}
 
+dl li {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+dl {
+    padding: 1rem;
+}
+
+dl:nth-of-type(even) {
+    background-color: whitesmoke;
 }
