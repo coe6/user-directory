@@ -21,24 +21,30 @@ function renderColor(favColor) {
 
 function renderListItem(type, value) {
     const item = document.createElement('li')
-    item.textContent = `${type}: `
+    const dtItem = document.createElement('dt')
+    dtItem.textContent = type
+
+    const description = document.createElement('dd')
 
     try {
-        item.appendChild(value)
+        description.appendChild(value)
     } catch(e) {
-        item.textContent += value
+        description.textContent = value
     }
+
+    item.appendChild(dtItem)
+    item.appendChild(description)
 
     return item
 }
 
 function renderList(form) {
-    const list = document.createElement('ul')
+    const list = document.createElement('dl')
 
     const user = {
-        'Name': form.changeThirdHeader.value,
-        'Age': form.age.value,
-        'Favorite Color': renderColor(form.favoriteColor.value),
+        'Name:': form.changeThirdHeader.value,
+        'Age:': form.age.value,
+        'Favorite Color:': renderColor(form.favoriteColor.value),
     }
 
     Object.keys(user).map(value => {
